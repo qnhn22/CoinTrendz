@@ -7,9 +7,17 @@ function App() {
   const [list, setList] = useState(null)
   const [filteredResult, setFilteredResult] = useState([])
   const [searchInput, setSearchInput] = useState('')
-  const [highest, setHighest] = useState('')
-  const [lowest, setLowest] = useState('')
-  const [biggerThanPoint5, setBiggerThanPoint5] = useState(0)
+
+  const [highest, setHighest] = useState({
+    coinName: '',
+    coinSymbol: '',
+    coinPrice: 0,
+  })
+  const [lowest, setLowest] = useState({
+    coinName: '',
+    coinSymbol: '',
+    coinPrice: 100,
+  })
 
   const URL = "https://api.coingecko.com/api/v3/coins/list"
 
@@ -22,13 +30,12 @@ function App() {
       const coinList = []
       const res = await axios.get(URL)
 
-      for (let i = 0; i < 50; i++) {
+      for (let i = 0; i < 20; i++) {
         if (!coinList.includes(res.data[randNum(res.data.length)])) {
           coinList.push(res.data[randNum(res.data.length)])
         }
       }
 
-      console.log(coinList)
       setList(coinList)
     } catch (err) {
       console.log(err)
@@ -44,7 +51,6 @@ function App() {
     setSearchInput(searchValue)
     if (searchValue !== '') {
       const filteredData = list.filter((coin) => {
-        console.log(coin.name)
         return coin.name.toLowerCase()
           .includes(searchValue.toLowerCase())
       })
@@ -54,10 +60,13 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Discover Random Cryptocurrencies</h1>
-      <p>Highest-value coin in this list: JumpToken</p>
-      <p>Lowest-value coin in this list: Doogee</p>
-      <p>Number of coins whose values larger than 0.5: 8</p>
+      {searchInput.length === 0 && (
+        <div className='stats'>
+          <h1>Discover Cryptocurrencies</h1>
+          <p>Highest-value coin in this list: {highest.coinName}({highest.coinSymbol.toUpperCase()})</p>
+          <p>Lowest-value coin in this list: {lowest.coinName}({lowest.coinSymbol.toUpperCase()})</p>
+        </div>
+      )}
       <input
         type='text'
         placeholder='Search your coin ...'
@@ -81,6 +90,10 @@ function App() {
               name={coin.name}
               id={coin.id}
               symbol={coin.symbol}
+              highest={highest}
+              setHighest={setHighest}
+              lowest={lowest}
+              setLowest={setLowest}
             />
           ))}
         </ul>
