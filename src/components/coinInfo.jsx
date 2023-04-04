@@ -25,7 +25,7 @@ function CoinInfo({ name, id, symbol }) {
                         src={coin.image.small}
                         alt={`icon for ${name}`}
                     />
-                    {name}({symbol.toUpperCase()})<span className="tab"></span> {coin.market_data.current_price.usd ? coin.market_data.current_price.usd : 'no_value'} USD
+                    {name}({symbol.toUpperCase()})<span className="tab"></span> {coin.market_data.current_price.usd ? coin.market_data.current_price.usd : 0} USD
                 </li>
             )
             }

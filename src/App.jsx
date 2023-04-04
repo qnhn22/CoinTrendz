@@ -7,6 +7,9 @@ function App() {
   const [list, setList] = useState(null)
   const [filteredResult, setFilteredResult] = useState([])
   const [searchInput, setSearchInput] = useState('')
+  const [highest, setHighest] = useState('')
+  const [lowest, setLowest] = useState('')
+  const [biggerThanPoint5, setBiggerThanPoint5] = useState(0)
 
   const URL = "https://api.coingecko.com/api/v3/coins/list"
 
@@ -52,6 +55,9 @@ function App() {
   return (
     <div className="App">
       <h1>Discover Random Cryptocurrencies</h1>
+      <p>Highest-value coin in this list: JumpToken</p>
+      <p>Lowest-value coin in this list: Doogee</p>
+      <p>Number of coins whose values larger than 0.5: 8</p>
       <input
         type='text'
         placeholder='Search your coin ...'
