@@ -56,6 +56,7 @@ function App() {
       })
       setFilteredResult(filteredData)
     }
+    console.log(searchInput)
   }
 
   return (
@@ -80,6 +81,11 @@ function App() {
               name={coin.name}
               id={coin.id}
               symbol={coin.symbol}
+              highest={highest}
+              setHighest={setHighest}
+              lowest={lowest}
+              setLowest={setLowest}
+              searchInput={searchInput}
             />
           ))}
         </ul>
@@ -94,6 +100,7 @@ function App() {
               setHighest={setHighest}
               lowest={lowest}
               setLowest={setLowest}
+              searchInput={searchInput}
             />
           ))}
         </ul>
