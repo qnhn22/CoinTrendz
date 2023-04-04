@@ -36,6 +36,7 @@ function App() {
     return Math.floor(Math.random() * length);
   }
 
+  // search bar
   const searchItems = (searchValue) => {
     setSearchInput(searchValue)
     if (searchValue !== '') {
@@ -55,7 +56,7 @@ function App() {
         type='text'
         placeholder='Search your coin ...'
         onChange={(e) => searchItems(e.target.value)}
-        value={searchInput}
+        value={searchInput} // connect input value to searchInput
       />
       {searchInput.length > 0 ? (
         <ul>
