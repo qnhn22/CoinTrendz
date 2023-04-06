@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import './App.css'
 import axios from 'axios'
-import CoinInfo from './components/CoinInfo'
+import CoinInfo from '../components/CoinInfo'
 
 function App() {
   const [list, setList] = useState(null)
@@ -30,7 +30,7 @@ function App() {
       const coinList = []
       const res = await axios.get(URL)
 
-      for (let i = 0; i < 20; i++) {
+      for (let i = 0; i < 12; i++) {
         if (!coinList.includes(res.data[randNum(res.data.length)])) {
           coinList.push(res.data[randNum(res.data.length)])
         }

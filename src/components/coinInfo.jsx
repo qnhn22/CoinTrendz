@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
+import { Link } from 'react-router-dom'
 
 function CoinInfo({ name, id, symbol, highest, setHighest, lowest, setLowest, searchInput }) {
     const [coin, setCoin] = useState(null)
@@ -48,19 +49,24 @@ function CoinInfo({ name, id, symbol, highest, setHighest, lowest, setLowest, se
     }
 
     return (
-        <div className='CoinInfo'>
+        <li className='CoinInfo' key={id}>
             {condition() === true && (
-                <li className='main-list' key={id}>
+                <>
                     <img
                         className='icon'
                         src={coin.image.small}
                         alt={`icon for ${name}`}
                     />
-                    {name}({symbol.toUpperCase()})<span className="tab"></span> {coin.market_data.current_price.usd ? coin.market_data.current_price.usd : 0} USD
-                </li>
+                    <Link
+                        to={`/CoinDetail/${id}`}
+                        key={id}
+                    >
+                        {name}({symbol.toUpperCase()})<span className="tab"></span> {coin.market_data.current_price.usd ? coin.market_data.current_price.usd : 0} USD
+                    </Link>
+                </>
             )
             }
-        </div>
+        </li>
     )
 }
 
