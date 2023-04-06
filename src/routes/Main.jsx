@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react'
-import './App.css'
+import './Main.css'
 import axios from 'axios'
 import CoinInfo from '../components/CoinInfo'
 
-function App() {
+function Main() {
   const [list, setList] = useState(null)
   const [filteredResult, setFilteredResult] = useState([])
   const [searchInput, setSearchInput] = useState('')
@@ -109,4 +109,4 @@ function App() {
   )
 }
 
-export default App
+export default Main
