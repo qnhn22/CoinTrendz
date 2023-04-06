@@ -1,28 +1,9 @@
-# Web Development Project 6 - *CoinTrendz*
+# *CoinTrendz*
 
-Submitted by: **Quan Nguyen**
+This web app: **track the prices of cryptocurrencies and show details of each coin**.
 
-This web app: **track the prices of cryptocurrencies**
-
-Time spent: **10** hours spent in total
-
-## Required Features
-
-The following **required** functionality is completed:
-
-- [ ] **The app includes at least two unique chart developed using the fetched data that tell an interesting story**
-- [x] **Clicking on an item in the list view displays more details about it**
-- [x] **Clicking on an item has a direct, unique link to that item's detail view page**
-
-
-The following **optional** features are implemented:
-
-- [ ] The site's customized dashboard contains more content that explains what is interesting about the data
-- [ ] The site allows users to toggle between different data visualizations
-
-The following **additional** features are implemented:
-
-* [ ] List anything else that you added to improve the site's functionality!
+## Technologies: 
+The app is built using React with React Router, CoinGecko API, and Axios
 
 ## Video Walkthrough
 
@@ -37,9 +18,6 @@ GIF created with KAP
 [ScreenToGif](https://www.screentogif.com/) for Windows
 [peek](https://github.com/phw/peek) for Linux. -->
 
-## Notes
-
-Describe any challenges encountered while building the app.
 
 ## License
 
