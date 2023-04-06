@@ -7,7 +7,7 @@ The app is built using React with React Router, CoinGecko API, and Axios
 
 ## Video Walkthrough
 
-Here's a walkthrough of implemented user stories:
+Here's a walkthrough of basic features:
 
 <img src='walkthrough.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
